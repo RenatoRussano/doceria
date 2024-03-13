@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Preço</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon//favicon-16x16.png">
+    <link rel="manifest" href="favicon//site.webmanifest">
+    <link rel="mask-icon" href="favicon//safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+<body>
+    <header>
+        <h1>Calculadora de custo de receita</h1>
+        <p class="paragrafo">Essa é uma calculadora simples. Insira os dados da seguinte maneira: <br>
+        1. O campo "Quantidade usada deve ser em grama ou mililitro. Exemplo: 1 Litro de leite contem 1.000 ml, logo, digite 1000 no campo Quantidade do pacote. <br>
+        2. O mesmo é valido para a quantidade de item usado. Exemplo: Se na receita diz que vão 300ml de leite, você deve digitar apenas 300 no campo Quantidade usada.</p>
+
+        <br>
+
+        <img class="imglogo" src="/image/logo.png" alt="Logomarca" class="logo">
+    </header>
+
+    <hr class="custom-hr">
+    <div class="produto">
+        <p>Produto:</p>
+        <form>
+            <input type="text" placeholder="Nome do Produto">
+            <input type="number" placeholder="Quantos itens a receita rende"> <br>
+            <button class="novoIngrediente">Novo Ingrediente</button>
+        </form>
+    </div>
+    <br>
+    <div class="ingredientes">
+        <form>
+            <input type="text" placeholder="Nome do Ingrediente">
+            <input type="number" placeholder="Quantidade Usada">
+            <input type="number" placeholder="Preço do Pacote">
+            <input type="number" placeholder="Quantidade no Pacote">
+        </form>
+        <hr class="custom-hr">
+        <div class="resultado"></div>
+    </div>
+
+    <div class="ingredientes-duplicado"></div>
+    <hr class="custom-hr">
+    <div class="resultado-final">
+        <p>Quanto custa?</p>
+        <p>Custo total: R$<span class="total">0.00</span></p>
+        <p>Custo do produto unitário: R$<span class="custo-unitario"></span></p>
+        <hr>
+        <p>Por quanto vende?</p>
+        <p>Venda do produto unitário: R$<span class="venda-unitaria"></span></p>
+        <p>Venda da receita inteira: R$<span class="venda-receita"></span></p>
+
+        <div class="buttons">
+        
+            <button class="reset">Resetar</button>
+            <button class="compartilhar">Compartilhar</button>
+        </div> 
+    </div>
+
+    <div>
+        <br>
+        <p class="notaderodape">
+            Issues conhecidas: <br><br>
+            1. O botão compartilhar está em manutenção <br>
+            2. Erros encontrados: R$0,00 do Custo total com cores diferentes. <br>
+            3. Descrição de custos em negrito e fonte maior do que deveria ser. <br>
+            4. HR e Resultado individual de dentro da div ingredientes deve ficar posicionado a esquerda do documento. <br>
+            5. A margem inferior após os botões não é a mesma que a lateral. <br>
+            6. Os campos do formulário precisam ter seus próprios tamanhos <br>
+            7. Ajuste na responsividade. <br>
+        </p>
+    <br>
+    </div>
+
+    <footer>The Unicorn Cake</footer>
+    <script src="script/script.js"></script>
+</body>
+</html>
