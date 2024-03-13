@@ -1,8 +1,8 @@
 // Função para calcular o resultado dentro de um elemento "ingredientes"
 function calcularResultado(ingredientesDiv) {
-    const quantidadeUsada = parseFloat(ingredientesDiv.querySelector('input:nth-child(2)').value) || 0;
-    const precoPacote = parseFloat(ingredientesDiv.querySelector('input:nth-child(3)').value) || 0;
-    const quantidadePacote = parseFloat(ingredientesDiv.querySelector('input:nth-child(4)').value) || 1;
+    const quantidadeUsada = parseFloat(ingredientesDiv.querySelector('input:nth-of-type(2)').value) || 0;
+    const precoPacote = parseFloat(ingredientesDiv.querySelector('input:nth-of-type(3)').value) || 0;
+    const quantidadePacote = parseFloat(ingredientesDiv.querySelector('input:nth-of-type(4)').value) || 1;
 
     const resultado = (quantidadeUsada * precoPacote) / quantidadePacote;
     ingredientesDiv.querySelector('.resultado').textContent = `Resultado: R$ ${resultado.toFixed(2)}`;
@@ -24,7 +24,7 @@ function calcularCustoTotal() {
 // Função para calcular os valores finais
 function calcularValoresFinais() {
     const custoTotal = parseFloat(document.querySelector('.total').textContent) || 0;
-    const rendimento = parseFloat(document.querySelector('.produto input:nth-child(2)').value) || 1;
+    const rendimento = parseFloat(document.querySelector('.produto input:nth-of-type(2)').value) || 1;
 
     const custoUnitario = custoTotal / rendimento;
     const vendaUnitaria = custoUnitario * 1.66;
@@ -36,7 +36,6 @@ function calcularValoresFinais() {
     document.querySelector('.venda-receita').textContent = `R$ ${vendaReceita.toFixed(2)}`;
 }
 
-
 // Função para adicionar event listener aos formulários de ingredientes
 function adicionarEventListeners() {
     document.querySelectorAll('.ingredientes').forEach(ingredientesDiv => {
@@ -47,7 +46,8 @@ function adicionarEventListeners() {
 }
 
 // Event listener para adicionar novo ingrediente
-document.querySelector('.novoIngrediente').addEventListener('click', function() {
+document.querySelector('.produto button').addEventListener('click', function(event) {
+    event.preventDefault();
     const ingredientesDiv = document.querySelector('.ingredientes').cloneNode(true);
     ingredientesDiv.querySelectorAll('input').forEach(input => {
         input.value = '';
